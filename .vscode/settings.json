@@ -1,4 +1,5 @@
 {
+  "window.title": "🤓 Fullstack World 🌎${separator}${activeEditorShort}",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#3d1fbf",
     "activityBar.activeBorder": "#000000",

@@ -7,15 +7,44 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        data: `@import "./src/styles/main.scss";`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-ghost-images`,
+      options: {
+        lookup: [
+          {
+            type: `GhostPost`,
+            imgTags: [`feature_image`],
+          },
+          {
+            type: `GhostPage`,
+            imgTags: [`feature_image`],
+          },
+          {
+            type: `GhostSettings`,
+            imgTags: [`cover_image`],
+          },
+          {
+            type: `GhostTag`,
+            imgTags: [`feature_image`],
+          },
+          {
+            type: `GhostAuthor`,
+            imgTags: ['profile_images', 'cover_image'],
+          },
+        ],
+        exclude: node => node.ghostId === undefined,
+        verbose: true,
+        disable: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -32,13 +61,29 @@ module.exports = {
       resolve: `gatsby-source-ghost`,
       options: {
         apiUrl: `https://ghost.full-stack.world`,
-        contentApiKey: `777e7d332ba87518dae5cee63e`,
-        version: `v3`, // Ghost API version, optional, defaults to "v3".
-        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
+        contentApiKey: `4208cd7bc4d3e0b01b8954a185`,
+        adminApiKey:
+          '5f09710e57f70f0dc37d3497:1aa36b3946c9a3d63444c0baf6a10537182f360e3b9faaa3a94e38914c7b8e13',
+        version: `v3`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-rehype`,
+      options: {
+        filter: node => {
+          const ghostTypes = [`GhostPost`, 'GhostPage'];
+          return ghostTypes.includes(node.internal.type);
+        },
+        plugins: [
+          {
+            resolve: `gatsby-rehype-inline-images`,
+            options: {
+              withWebp: true,
+              useImageCache: true,
+            },
+          },
+        ],
+      },
+    },
   ],
 };
