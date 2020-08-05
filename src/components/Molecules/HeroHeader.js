@@ -22,7 +22,7 @@ export default function HeroHeader() {
           }
           localFeatureImage {
             childImageSharp {
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 2500) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -32,27 +32,32 @@ export default function HeroHeader() {
     `
   );
   return (
-    <div className='row mt-0 flex-start header'>
-      <BackgroundImage
-        fluid={ghostPost.localFeatureImage.childImageSharp.fluid}
-      >
-        <section className='blog'>
+    <BackgroundImage
+      fluid={ghostPost.localFeatureImage.childImageSharp.fluid}
+      classname='wrapper pl-0 pr-0'
+    >
+      <div className='row m-0  header pl-0 pr-0'>
+        <section className='blog ml-5 col-5'>
           <div className='info'>
-            <h1>{ghostPost.title}</h1>
-            <p>{ghostPost.excerpt}</p>
+            <h1 className='_title'>{ghostPost.title}</h1>
+            <p className='_excerpt'>{ghostPost.excerpt}</p>
           </div>
           <div className='cta d-flex justify-content-start'>
-            <Link
-              to={`/categories/${ghostPost.primary_tag.slug}/${ghostPost.slug}`}
-            >
-              Go to post
-            </Link>
-            <Link to={`/categories/${ghostPost.primary_tag.slug}`}>
-              Go to Category
-            </Link>
+            <div className='_item __main'>
+              <Link
+                to={`/categories/${ghostPost.primary_tag.slug}/${ghostPost.slug}`}
+              >
+                Go to post
+              </Link>
+            </div>
+            <div className='_item '>
+              <Link to={`/categories/${ghostPost.primary_tag.slug}`}>
+                Go to Category
+              </Link>
+            </div>
           </div>
         </section>
-      </BackgroundImage>
-    </div>
+      </div>
+    </BackgroundImage>
   );
 }

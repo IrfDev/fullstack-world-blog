@@ -27,7 +27,7 @@ export default function HomePostListing() {
               }
               localFeatureImage {
                 childImageSharp {
-                  fluid(maxWidth: 750) {
+                  fluid(maxWidth: 850) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -42,9 +42,12 @@ export default function HomePostListing() {
   return (
     <div className='d-flex flex-column justify-content-around text-center posts'>
       <h1 className='_title'>Posts</h1>
-      <div className='row m-0 '>
+      <div className='row m-0 align-item-stretch'>
         {edges.map(({ node: post }) => (
-          <div key={post.slug} className='col-12 col-md-6 wrapper'>
+          <div
+            key={post.slug}
+            className='col-12 col-md-6 mt-4 wrapperr align-items-stretch'
+          >
             <PostCard post={post} />
           </div>
         ))}

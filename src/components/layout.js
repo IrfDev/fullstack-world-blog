@@ -30,17 +30,22 @@ const Layout = ({ children }) => {
           integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk'
           crossorigin='anonymous'
         />
+        <script
+          src='https://kit.fontawesome.com/767b73986e.js'
+          crossorigin='anonymous'
+        ></script>
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Global styles={styles} />
       <div>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built by
           {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
+          <a href='https://github.com/IrfDev'>IrfDev</a>
         </footer>
       </div>
+
       <script
         src='https://code.jquery.com/jquery-3.5.1.slim.min.js'
         integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj'

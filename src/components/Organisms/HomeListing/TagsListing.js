@@ -15,7 +15,7 @@ export default function HomeTagsListing() {
             node {
               id
               slug
-              meta_description
+              description
               name
               localFeatureImage {
                 childImageSharp {
@@ -32,12 +32,12 @@ export default function HomeTagsListing() {
   );
 
   return (
-    <div className='row text-center flex-wrap categories'>
+    <div className='row text-center align-items-stretch  flex-wrap categories m-0'>
       <div className='col-12 info'>
         <h1 className='_title'>Categories</h1>
       </div>
       {edges.map(({ node: tag }) => (
-        <section className='col-12 col-md-6'>
+        <section className='col-12 col-md-6 mt-4'>
           <CategoryCard key={tag.slug} tag={tag} />
         </section>
       ))}

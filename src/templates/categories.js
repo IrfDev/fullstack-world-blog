@@ -17,7 +17,7 @@ export const Query = graphql`
       url
       localFeatureImage {
         childImageSharp {
-          fluid(maxWidth: 2000) {
+          fluid(maxWidth: 2500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -59,7 +59,7 @@ export default function CategoriesTemplate({
     <Layout>
       <main className='category-page'>
         <BackgroundImage
-          className='header'
+          className='headerr'
           fluid={tag.localFeatureImage.childImageSharp.fluid}
         >
           <header className='text-center text-light info'>
@@ -70,10 +70,9 @@ export default function CategoriesTemplate({
         <section className='row m-0 justify-content-center categories'>
           {posts.edges.map(({ node: post }) => (
             <div className='col-12 col-md-8  d-flex mt-3 mb-3 category'>
-              <BackgroundImage
+              <Image
                 fluid={post.localFeatureImage.childImageSharp.fluid}
-                Tag='div'
-                className='post-information col image'
+                className='post-information img-fluid col image'
               />
               <div className='post-information info col-9 col-md-10 '>
                 <Link to={`/categories/${post.primary_tag.slug}/${post.slug}`}>

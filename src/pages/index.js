@@ -26,9 +26,8 @@ export const IndexPage = () => {
           title='From developers to developers 🔥'
           description={description}
         />
-        <HomeCta />
-        Feature
         <TagsListing />
+        <HomeCta />
         <PostListing />
       </main>
     </Layout>

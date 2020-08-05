@@ -1,5 +1,5 @@
 :root {
-  --base-font-size: 0.9em;
+  --base-font-size: 1em;
   --type-scale: 1.25;
   --h5: calc(var(--base-font-size) * var(--type-scale));
   --h4: calc(var(--h5) * var(--type-scale));
@@ -9,8 +9,7 @@
 }
 
 h1 {
-  margin-top: 0;
-  font-size: var(--h1);
+  font-size: var(--h1) !important;
 }
 
 h2 {
@@ -48,7 +47,6 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 2.75rem 0 1.05rem;
   font-weight: 400;
   line-height: 1.15;
 }
@@ -71,9 +69,10 @@ span {
     --type-scale: 1.15;
   }
 }
+
 @media (min-width: 1200px) {
   :root {
-    --base-font-size: 2em;
+    --base-font-size: 1.5em;
     --type-scale: 1.15;
   }
 }
