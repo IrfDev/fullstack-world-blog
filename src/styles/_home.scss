@@ -11,6 +11,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       .info {
         background-color: $alpha-background-gradient;
         ._title {
@@ -23,11 +24,10 @@
       }
       .cta {
         display: flex;
-        // flex-flow: nowrap row;
+        padding: 0;
         min-width: 100%;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
-
         ._item {
           a {
             color: white;
@@ -82,6 +82,7 @@
       height: 100%;
       border: none;
       &::before,
+      &::after,
       & {
         border-radius: 16px;
       }
@@ -153,8 +154,8 @@
           min-height: 100%;
           background: linear-gradient(
             180deg,
-            rgba(46, 24, 147, 0.267) 0%,
-            rgba(0, 0, 0, 0.5) 100%
+            rgba(46, 24, 147, 0.342) 0%,
+            rgba(0, 0, 0, 0.739) 100%
           );
           background-blend-mode: multiply;
           .author {

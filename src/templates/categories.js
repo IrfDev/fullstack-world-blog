@@ -69,16 +69,21 @@ export default function CategoriesTemplate({
         </BackgroundImage>
         <section className='row m-0 justify-content-center categories'>
           {posts.edges.map(({ node: post }) => (
-            <div className='col-12 col-md-8  d-flex mt-3 mb-3 category'>
+            <div className='col-12 col-md-8  d-flex mt-5 mb-3 pb-5 category'>
               <Image
                 fluid={post.localFeatureImage.childImageSharp.fluid}
                 className='post-information img-fluid col image'
               />
-              <div className='post-information info col-9 col-md-10 '>
+              <div className='post-information info col-9 col-md-10'>
                 <Link to={`/categories/${post.primary_tag.slug}/${post.slug}`}>
                   <h4 className='_title'>{post.title}</h4>
                 </Link>
-                <span className='_author'>{post.primary_author.name}</span>
+                <span className='_author'>
+                  <Link to={`/author/${post.primary_author.slug}`}>
+                    {post.primary_author.name}
+                  </Link>
+                  -{' '}
+                </span>
                 <span className='_date'>{post.created_at}</span>
                 <p className='_excerpt'>{post.excerpt}</p>
               </div>

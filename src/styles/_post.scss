@@ -1,12 +1,195 @@
+@import 'colors';
+
 .post-page {
   .header {
     .info {
+      display: flex;
+      flex-flow: wrap column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.287),
+        rgba(47, 0, 255, 0.62)
+      );
+      color: white;
       ._title {
       }
       ._excerpt {
       }
     }
   }
+
   .post-content {
+    overflow: visible;
+    line-height: 1.8;
+    pre {
+      border-radius: 7px;
+      background-color: #000b42;
+
+      code {
+        color: #4894d9;
+        font-family: Hack;
+        font-size: 1.1em;
+        white-space: pre-wrap;
+        line-height: 1.8;
+      }
+    }
+
+    .kg-gallery-image,
+    img,
+    picture {
+      margin-bottom: 2em;
+      min-width: 100%;
+      overflow: visible;
+      box-shadow: 3px 23px 50px rgba(0, 0, 0, 0.27),
+        6px 8px 20px rgba(30, 14, 98, 0.35);
+      border-radius: 7px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: $alpha-color;
+      line-height: 2.5 !important;
+    }
+
+    p {
+      color: $font-color-dark;
+    }
+
+    strong {
+      color: $alpha-color-200;
+    }
+
+    blockquote {
+      color: $alpha-color-200;
+      line-height: 2em;
+      font-style: italic;
+      text-align: center;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      max-width: 40em;
+      margin-left: auto;
+      margin-right: auto;
+      &::before,
+      &::after {
+        content: '\030B';
+        font-size: 2em;
+        color: $alpha-color;
+      }
+      border: 1px solid $font-color-extra-light;
+      border-radius: 7px;
+      padding: 1.5em;
+    }
+
+    a {
+      color: $alpha-color-100;
+      border-bottom: 0.2em solid #472be78c;
+      transition: 0.3s ease-in;
+      &:visited {
+        border-bottom: 0.2em solid $alpha-color-200;
+        color: $alpha-color-200;
+      }
+      &:hover {
+        color: $alpha-color;
+        transition: 0.2s ease-out;
+        text-decoration: none;
+        border-bottom: 0.25em solid #472be7ad;
+      }
+    }
+
+    ul li {
+      &::before {
+        list-style: none;
+        content: '\2023';
+        color: $alpha-color;
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 0.2em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em;
+        margin-right: 0.3em;
+        font-size: 2em;
+      }
+    }
+
+    ol,
+    ul {
+      list-style: none;
+      counter-reset: item;
+    }
+
+    ol li::before {
+      content: counter(item) '. ';
+      color: red;
+      counter-increment: item;
+      color: $alpha-color;
+      font-weight: bold;
+    }
+  }
+
+  .author-card {
+    border: 1.3px $font-color-light solid;
+    min-height: 100%;
+    border-radius: 7px;
+    .content {
+      padding: 1.5em;
+      align-items: center !important;
+      align-content: center !important;
+      .profile {
+        flex-basis: 20%;
+        align-self: center;
+        img {
+          border-radius: 50%;
+          align-self: center;
+          margin: 0;
+        }
+      }
+      .info {
+        flex-basis: 75%;
+        ._name {
+          color: $alpha-color-200;
+        }
+        ._description {
+          color: $alpha-color-300;
+        }
+      }
+    }
+  }
+
+  .posts {
+    min-height: 100%;
+    .post {
+      border: none;
+      min-height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(46, 24, 147, 0.342) 0%,
+        rgba(0, 0, 0, 0.739) 100%
+      );
+      background-blend-mode: multiply;
+      .author {
+        align-items: flex-start;
+        height: 100%;
+        ._avatar {
+          flex-basis: 5%;
+        }
+        ._name {
+          height: 100%;
+          color: white;
+        }
+      }
+      .content {
+        color: white;
+        ._title {
+          font-size: var(--base-font-size);
+        }
+        ._exerpt {
+        }
+      }
+    }
   }
 }

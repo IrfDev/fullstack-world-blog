@@ -41,19 +41,33 @@ export default function AuthorTemplate({ data: { ghostAuthor: author } }) {
           className='row header'
           fluid={author.localFeatureImage.childImageSharp.fluid}
         >
-          <div className='col-12 text-center info'>
-            <img
-              className='w-25 rounded-circle _avatar'
-              src={author.profile_image}
-              alt={author.name}
-            />
-            <h1 className='_name'>{author.name}</h1>
+          <div className='col-12 d-flex text-center info align-content-center justify-content-center'>
+            <div className='text text-right align-self-center'>
+              <h1 className='_name'>{author.name}</h1>
+              <p className='_bio'>{author.bio}</p>
+            </div>
+            <div className='avatar-wraper align-self-center'>
+              <img
+                className=' _avatar'
+                src={author.profile_image}
+                alt={author.name}
+              />
+            </div>
+            <div className='justify-content-center d-flex social align-self-center'>
+              <a href={author.twitter}>
+                <i class='fab fa-github'></i>
+              </a>
+              <a href={author.facebook}>
+                <i class='fab fa-linkedin'></i>
+              </a>
+              <a href={author.website}>
+                <i class='fas fa-link'></i>
+              </a>
+            </div>
           </div>
         </BackgroundImage>
 
-        <section className='content'>
-          <p className='_bio'>{author.bio}</p>
-        </section>
+        <section className='content'></section>
       </main>
     </Layout>
   );

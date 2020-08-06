@@ -1,9 +1,33 @@
 .author-page {
   .header {
+    color: white;
     .info {
-      ._name {
+      min-height: 100vh;
+      flex-flow: row wrap;
+      background-image: $alpha-background-gradient;
+      .text {
+        flex-basis: 30%;
+        ._name {
+        }
       }
-      ._avatar {
+
+      .avatar-wraper {
+        flex-basis: 35%;
+        border-radius: 7px;
+        ._avatar {
+          border-radius: 7px;
+        }
+      }
+
+      .social {
+        flex-basis: 50%;
+        font-size: 4em;
+        a {
+          color: white;
+        }
+        i {
+          margin: 0.2em;
+        }
       }
     }
   }

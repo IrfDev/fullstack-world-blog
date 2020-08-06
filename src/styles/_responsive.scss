@@ -47,13 +47,15 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 900;
+  font-family: George;
 }
 
 small,
-span {
+span,
+p {
   font-size: calc(var(--base-font-size) / var(--type-scale));
+  font-family: DM Sans;
 }
 
 @media (min-width: 480px) {
