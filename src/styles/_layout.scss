@@ -9,6 +9,9 @@
   .header-layout {
     align-items: center;
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.165, 0.85);
+    ._logo {
+      max-width: 3em;
+    }
     .icon {
       cursor: pointer;
       i {
@@ -23,7 +26,10 @@
     height: 100%;
     top: 0;
     right: 0;
-    min-width: 50vw;
+    min-width: 70vw;
+    @media screen and (min-width: 800px) {
+      min-width: 25vw;
+    }
     position: fixed;
 
     display: block;
@@ -32,15 +38,18 @@
     nav {
       padding: 2em;
       color: white;
+      ._icon-wrapper {
+        justify-self: end !important;
+      }
       i {
         cursor: pointer;
-        font-size: 2.3em;
+        font-size: 2em;
       }
       ul {
         list-style: none;
         ._item {
           color: white;
-          font-size: var(--h1);
+          font-size: var(--h4);
           font-family: George;
         }
       }
@@ -57,7 +66,10 @@
       transform: translateY(-100%);
       transition: 0.5s cubic-bezier(0.68, -0.35, 0.165, 0.85);
     }
-    transform: translateX(-30%);
+    transform: translateX(-65%);
+    @media screen and (min-width: 800px) {
+      transform: translateX(-25%);
+    }
     main {
       filter: blur(2px) grayscale(30%);
       box-shadow: none;

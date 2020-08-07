@@ -27,11 +27,11 @@ export default function HomeCategoryCard({ tag }) {
     >
       <div className='card-body bg-transparent content align-items-center'>
         <div className='info'>
-          <h4>
+          <h5>
             <Link className='card-title _title' to={`/categories/${tag.slug}`}>
               {tag.name}
             </Link>
-          </h4>
+          </h5>
           {/* <p className='_description'>{tag.description}</p> */}
         </div>
         <div className='icon text-right'>{iconComponent(tag.slug)}</div>

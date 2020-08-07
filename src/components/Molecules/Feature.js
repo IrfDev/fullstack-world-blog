@@ -9,7 +9,7 @@ export default function Feature({ title, description }) {
         <i className='far fa-star _item' />
       </div>
       <div className='text-center info'>
-        <h2 className='_title'>{title}</h2>
+        <h4 className='_title'>{title}</h4>
         <p className='_description'>{description}</p>
       </div>
     </div>

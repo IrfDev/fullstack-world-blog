@@ -43,9 +43,12 @@
       .info {
         ._title {
           color: $alpha-color;
+          font-weight: 600 !important;
         }
         ._author {
-          color: $alpha-color-200;
+          a {
+            color: $alpha-color-200;
+          }
         }
         ._date {
           color: $font-color-dark;

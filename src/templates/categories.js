@@ -64,7 +64,9 @@ export default function CategoriesTemplate({
         >
           <header className='text-center text-light info'>
             <h1 className='_title'>{tag.name}</h1>
-            <div className='_description'>{tag.description}</div>
+            <div className='_description'>
+              <p>{tag.description}</p>
+            </div>
           </header>
         </BackgroundImage>
         <section className='row m-0 justify-content-center categories'>
@@ -74,14 +76,14 @@ export default function CategoriesTemplate({
                 fluid={post.localFeatureImage.childImageSharp.fluid}
                 className='post-information img-fluid col image'
               />
-              <div className='post-information info col-8 col-md-10'>
+              <div className='post-information info col-8 col-md-9'>
                 <Link to={`/categories/${post.primary_tag.slug}/${post.slug}`}>
                   <h4 className='_title'>{post.title}</h4>
                 </Link>
                 <span className='_author'>
                   <Link to={`/author/${post.primary_author.slug}`}>
                     {post.primary_author.name}
-                  </Link>
+                  </Link>{' '}
                   -{' '}
                 </span>
                 <span className='_date'>{post.created_at}</span>

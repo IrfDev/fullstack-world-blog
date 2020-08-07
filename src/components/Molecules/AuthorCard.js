@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AuthorCard({ author }) {
   return (
-    <section className='author-card col-lg-5 col-10'>
+    <section className='author-card col-lg-6 col-10'>
       <div className='content d-flex justify-content-around'>
         <div className='profile'>
           <img

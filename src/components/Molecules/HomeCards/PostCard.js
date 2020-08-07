@@ -13,8 +13,8 @@ export default function HomePostCard({ post }) {
           : ''
       }
     >
-      <div className='card b-0 bg-transparent post pb-lg-5'>
-        <div className='row pb-0 pt-3 pr-3 pl-3 m-0 card-titles d-flex  author text-left'>
+      <div className='card p-lg-3  b-0 bg-transparent post pb-lg-5'>
+        <div className='row pb-0 pt-3 pl-3 m-0 card-titles d-flex  author text-left align-items-stretch'>
           <Link className='_avatar' to={`/author/${post.primary_author.slug}`}>
             <img
               src={post.primary_author.profile_image}
@@ -29,7 +29,7 @@ export default function HomePostCard({ post }) {
             className='card-title text-light _title'
             to={`/categories/${post.primary_tag.slug}/${post.slug}`}
           >
-            {post.title}
+            <h5>{post.title}</h5>
           </Link>
           <p className='_excerpt'>{post.excerpt}</p>
         </div>

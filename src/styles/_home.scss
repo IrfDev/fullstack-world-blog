@@ -107,6 +107,7 @@
         text-align: left;
         justify-content: space-between;
         border-radius: 16px;
+        padding: 10% 10%;
         background: linear-gradient(
             0deg,
             rgba(72, 43, 231, 0.58),
@@ -117,6 +118,7 @@
           flex-basis: 90%;
           ._title {
             color: white;
+            font-weight: 500;
           }
           ._description {
             color: white;
@@ -126,7 +128,7 @@
           flex-basis: 10%;
           align-self: center;
           ._item {
-            font-size: 4em;
+            font-size: 2em;
             color: white;
           }
         }
@@ -144,7 +146,7 @@
         color: $alpha-color;
       }
       ._description {
-        color: $font-color-light;
+        color: $font-color-dark;
       }
     }
     ._cta {
@@ -194,14 +196,25 @@
           );
 
           .author {
-            align-items: flex-start;
+            align-items: center !important;
             height: 100%;
+            align-items: center;
+
             ._avatar {
-              flex-basis: 5%;
+              flex-basis: 10%;
             }
             ._name {
+              font-size: 0.8em !important;
               height: 100%;
               color: white;
+            }
+            @media screen and(min-width:800px) {
+              ._avatar {
+                flex-basis: 10%;
+              }
+              ._name {
+                font-size: 1.3em !important;
+              }
             }
           }
 

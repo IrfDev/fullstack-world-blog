@@ -41,7 +41,7 @@ export default function HomePostListing() {
 
   return (
     <div className='d-flex flex-column justify-content-around text-center posts'>
-      <h1 className='_title'>Posts</h1>
+      <h2 className='_title'>Posts</h2>
       <div className='row m-0 align-item-stretch justify-content-center'>
         {edges.map(({ node: post }) => (
           <div

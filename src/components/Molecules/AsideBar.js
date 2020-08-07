@@ -19,9 +19,14 @@ export default function AsideBar({ toggleMenu }) {
     `
   );
   return (
-    <aside className={`menu-aside `}>
+    <aside className='menu-aside d-flex flex-row'>
       <nav>
-        <i onClick={toggleMenu} className=' mb-4 fas fa-times'></i>
+        <div
+          onClick={toggleMenu}
+          className='text-right flex-end justify-self-end _icon-wrapper'
+        >
+          <i className='mb-4 fas fa-times' />
+        </div>
         <ul>
           {edges.map(({ node: tag }) => (
             <li>

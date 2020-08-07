@@ -99,14 +99,17 @@ export default function PostTemplates({ data }) {
             <div className='info'>
               <h1 className='_title'>{post.title}</h1>
               <p className='_excerpt'>{post.excerpt}</p>
+              <div className='tags row m-0 text-center justify-content-center'>
+                {post.tags.map(tag => (
+                  <span className='_item' key={tag.slug}>
+                    <Link to={`/categories/${tag.slug}`}>{tag.name}</Link>
+                  </span>
+                ))}
+              </div>
             </div>
           </header>
         </BackgroundImage>
-        {post.tags.map(tag => (
-          <span key={tag.slug}>
-            <Link to={`/categories/${tag.slug}`}>{tag.name}</Link>
-          </span>
-        ))}
+
         <div className='row justify-content-center  m-0'>
           <div className='col-10 col-lg-7'>
             <article className='post-content'>
@@ -117,9 +120,9 @@ export default function PostTemplates({ data }) {
         <div className='row m-0 mt-5 mb-5 justify-content-center'>
           <AuthorCard author={post.primary_author} />
         </div>
-        <div className='row posts mt-4 m-0 align-content-stretch justify-content-center'>
-          <div className='col-12 text-center'>
-            <h1>You'll also like</h1>
+        <div className='row posts mt-5 m-0 align-content-stretch justify-content-center'>
+          <div className='col-12 mt-5  text-center _section-title'>
+            <h2>You'll also like</h2>
           </div>
           {relatedPosts.map(({ node: post }) => (
             <div key={post.slug} className='col-10 col-lg-4 mt-4 wrapperr'>

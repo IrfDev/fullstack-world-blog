@@ -32,9 +32,9 @@ export default function HomeTagsListing() {
   );
 
   return (
-    <div className='row mt-5 text-center align-items-stretch flex-wrap categories m-0 justify-content-center'>
+    <div className='row mt-5 mb-5 text-center align-items-stretch flex-wrap categories m-0 justify-content-center'>
       <div className='col-12 info'>
-        <h1 className='_title'>Categories</h1>
+        <h2 className='_title'>Categories</h2>
       </div>
       {edges.map(({ node: tag }) => (
         <section className='col-12 col-md-6 mt-4  category-wrapper'>
