@@ -9,7 +9,7 @@
 }
 
 h1 {
-  font-size: var(--h1) !important;
+  font-size: var(--h1);
 }
 
 h2 {
@@ -48,14 +48,20 @@ h3,
 h4,
 h5 {
   font-weight: 900;
-  font-family: George;
+  font-family: George !important;
 }
 
 small,
 span,
 p {
-  font-size: calc(var(--base-font-size) / var(--type-scale));
-  font-family: DM Sans;
+  font-size: calc(var(--base-font-size) / var(--type-scale) * 0.8);
+  font-family: DM Sans !important;
+}
+
+button,
+a {
+  font-family: George;
+  font-weight: 600;
 }
 
 @media (min-width: 480px) {

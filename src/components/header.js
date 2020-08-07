@@ -2,17 +2,17 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, menuStatus, toggleMenu }) => (
   <header
     style={{
-      marginBottom: `1.45rem`,
       position: 'fixed',
       zIndex: 100,
+      minWidth: '100vw',
     }}
-    className='row m-0'
+    className='row p-4 m-0 header-layout justify-content-between'
   >
-    <div>
-      <h1 style={{ margin: 0 }}>
+    <div className='info'>
+      <h1 className='_title' style={{ margin: 0 }}>
         <Link
           to='/'
           style={{
@@ -23,6 +23,9 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+    </div>
+    <div onClick={toggleMenu} className='icon'>
+      <i class='fas fa-bars'></i>
     </div>
   </header>
 );

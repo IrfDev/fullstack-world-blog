@@ -95,9 +95,11 @@ export default function PostTemplates({ data }) {
           className='header'
           fluid={post.localFeatureImage.childImageSharp.fluid}
         >
-          <header className='info'>
-            <h1 className='_title'>{post.title}</h1>
-            <p className='_excerpt'>{post.excerpt}</p>
+          <header className='info-wrapper row m-0'>
+            <div className='info'>
+              <h1 className='_title'>{post.title}</h1>
+              <p className='_excerpt'>{post.excerpt}</p>
+            </div>
           </header>
         </BackgroundImage>
         {post.tags.map(tag => (
@@ -106,13 +108,13 @@ export default function PostTemplates({ data }) {
           </span>
         ))}
         <div className='row justify-content-center  m-0'>
-          <div className='col-8'>
+          <div className='col-10 col-lg-7'>
             <article className='post-content'>
               {renderAst(post.childHtmlRehype.htmlAst)}
             </article>
           </div>
         </div>
-        <div className='row m-0 mt-3 mb-5 justify-content-center'>
+        <div className='row m-0 mt-5 mb-5 justify-content-center'>
           <AuthorCard author={post.primary_author} />
         </div>
         <div className='row posts mt-4 m-0 align-content-stretch justify-content-center'>
@@ -120,7 +122,7 @@ export default function PostTemplates({ data }) {
             <h1>You'll also like</h1>
           </div>
           {relatedPosts.map(({ node: post }) => (
-            <div key={post.slug} className='col-12 col-md-4 mt-4 wrapperr'>
+            <div key={post.slug} className='col-10 col-lg-4 mt-4 wrapperr'>
               <PostCard post={post} />
             </div>
           ))}

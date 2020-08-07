@@ -11,9 +11,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-sass',
-      options: {
-        data: `@import "./src/styles/main.scss";`,
-      },
     },
     {
       resolve: `gatsby-plugin-ghost-images`,

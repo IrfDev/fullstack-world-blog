@@ -32,20 +32,15 @@ export default function HomeTagsListing() {
   );
 
   return (
-    <div className='row text-center align-items-stretch  flex-wrap categories m-0'>
+    <div className='row mt-5 text-center align-items-stretch flex-wrap categories m-0 justify-content-center'>
       <div className='col-12 info'>
         <h1 className='_title'>Categories</h1>
       </div>
       {edges.map(({ node: tag }) => (
-        <section className='col-12 col-md-6 mt-4'>
+        <section className='col-12 col-md-6 mt-4  category-wrapper'>
           <CategoryCard key={tag.slug} tag={tag} />
         </section>
       ))}
-      <div className='card category'>
-        <h3 className='title'></h3>
-        <p className='description'></p>
-        <img className='img-fliuid' src='' alt='' />
-      </div>
     </div>
   );
 }

@@ -5,8 +5,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Global, css } from '@emotion/core';
 import { Helmet } from 'react-helmet';
 
+import AsideBar from '../components/Molecules/AsideBar';
 import Header from './header';
-import './layout.css';
+// import './layout.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,8 +20,20 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const styles = css``;
+  const styles = css`
+    .main-wrapper-layout {
+    }
+  `;
 
+  const [openMenu, setMenu] = React.useState(false);
+
+  const toggleMenu = () => {
+    if (openMenu === true) {
+      setMenu(false);
+    } else {
+      setMenu(true);
+    }
+  };
   return (
     <>
       <Helmet>
@@ -35,15 +48,22 @@ const Layout = ({ children }) => {
           crossOrigin='anonymous'
         ></script>
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <Global styles={styles} />
-      <div>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built by
-          {` `}
-          <a href='https://github.com/IrfDev'>IrfDev</a>
-        </footer>
+      <div className='website-wrapper'>
+        <div className={`main-wrapper-layout ${openMenu ? 'activee' : ''}`}>
+          <Header
+            toggleMenu={toggleMenu}
+            siteTitle={data.site.siteMetadata.title}
+          />
+
+          <main>{children}</main>
+          <AsideBar toggleMenu={toggleMenu} />
+          <footer>
+            © {new Date().getFullYear()}, Built by
+            {` `}
+            <a href='https://github.com/IrfDev'>IrfDev</a>
+          </footer>
+        </div>
       </div>
 
       <script

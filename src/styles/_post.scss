@@ -2,7 +2,7 @@
 
 .post-page {
   .header {
-    .info {
+    .info-wrapper {
       display: flex;
       flex-flow: wrap column;
       text-align: center;
@@ -12,13 +12,20 @@
 
       background-image: linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.287),
+        rgba(0, 0, 0, 0.548),
         rgba(47, 0, 255, 0.62)
       );
+
       color: white;
-      ._title {
-      }
-      ._excerpt {
+      .info {
+        max-width: 80%;
+        @media screen and (min-width: 800px) {
+          max-width: 60%;
+        }
+        ._title {
+        }
+        ._excerpt {
+        }
       }
     }
   }
@@ -55,7 +62,10 @@
     h3,
     h4 {
       color: $alpha-color;
-      line-height: 2.5 !important;
+      line-height: 1.2;
+      @media screen and (min-width: 800px) {
+        line-height: 2.5;
+      }
     }
 
     p {
@@ -132,15 +142,15 @@
   }
 
   .author-card {
-    border: 1.3px $font-color-light solid;
+    border: 1.3px $alpha-color-300 solid;
     min-height: 100%;
     border-radius: 7px;
     .content {
-      padding: 1.5em;
+      padding: 1em;
       align-items: center !important;
       align-content: center !important;
       .profile {
-        flex-basis: 20%;
+        flex-basis: 25%;
         align-self: center;
         img {
           border-radius: 50%;
@@ -149,12 +159,16 @@
         }
       }
       .info {
-        flex-basis: 75%;
+        flex-basis: 70%;
         ._name {
-          color: $alpha-color-200;
+          color: $alpha-color-100;
         }
         ._description {
+          color: $alpha-color-200;
+        }
+        ._title {
           color: $alpha-color-300;
+          font-size: 0.8em;
         }
       }
     }
@@ -162,18 +176,30 @@
 
   .posts {
     min-height: 100%;
+    .wrapper {
+      &,
+      &::before,
+      &::after,
+      .post {
+        border-radius: 16px;
+      }
+    }
     .post {
       border: none;
       min-height: 100%;
+      .wrapperr {
+        border-radius: 7px;
+      }
+
       background: linear-gradient(
         180deg,
         rgba(46, 24, 147, 0.342) 0%,
         rgba(0, 0, 0, 0.739) 100%
       );
+      box-shadow: $alpha-box-shadow;
       background-blend-mode: multiply;
       .author {
         align-items: flex-start;
-        height: 100%;
         ._avatar {
           flex-basis: 5%;
         }
@@ -182,6 +208,7 @@
           color: white;
         }
       }
+
       .content {
         color: white;
         ._title {
