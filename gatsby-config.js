@@ -44,12 +44,12 @@ module.exports = {
         disable: false,
       },
     },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: 'full-stack.world',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-s3`,
+    //   options: {
+    //     bucketName: 'full-stack.world',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
