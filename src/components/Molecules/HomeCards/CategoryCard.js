@@ -16,6 +16,9 @@ export default function HomeCategoryCard({ tag }) {
 
       case 'server':
         return <i className={`fas fa-cloud _item ${categorySlug}`}></i>;
+
+      default:
+        return <i className={`fas fa-code _item ${categorySlug}`}></i>;
     }
   };
 

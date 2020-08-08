@@ -26,16 +26,17 @@
     height: 100%;
     top: 0;
     right: 0;
+    position: fixed;
     min-width: 70vw;
     @media screen and (min-width: 800px) {
       min-width: 25vw;
     }
-    position: fixed;
 
     display: block;
 
     background-color: $alpha-color;
     nav {
+      top: 0;
       padding: 2em;
       color: white;
       ._icon-wrapper {

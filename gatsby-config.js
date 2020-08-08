@@ -2,7 +2,9 @@ module.exports = {
   siteMetadata: {
     title: `Fullstack world`,
     description: 'Blog for fullstack developers who loves developing',
-    author: `@gatsbyjs`,
+    author: `@IrfDev`,
+    ogImage: `/og-main.png`,
+    ogType: 'website',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -43,6 +45,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'FullstackWorld',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -51,7 +59,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     {

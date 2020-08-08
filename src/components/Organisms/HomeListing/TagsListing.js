@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+import { graphql, useStaticQuery } from 'gatsby';
+// import BackgroundImage from 'gatsby-background-image';
 
 import CategoryCard from '../../Molecules/HomeCards/CategoryCard';
 

@@ -1,23 +1,23 @@
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 
-const GetTagById = () => {
-  const data = useStaticQuery(graphql`
-    query($slug: String!) {
-      ghostTag(slug: { eq: $slug }) {
-        description
-        slug
-        description
-        meta_title
-        meta_description
-        name
-        url
-        feature_image
-        postCount
-      }
-    }
-  `);
+// const GetTagById = () => {
+//   const data = useStaticQuery(graphql`
+//     query($slug: String!) {
+//       ghostTag(slug: { eq: $slug }) {
+//         description
+//         slug
+//         description
+//         meta_title
+//         meta_description
+//         name
+//         url
+//         feature_image
+//         postCount
+//       }
+//     }
+//   `);
 
-  return data.ghostTag;
-};
+//   return data.ghostTag;
+// };
 
-export default GetTagById;
+// export default GetTagById;

@@ -37,7 +37,7 @@ export default function HeroHeader() {
       classname='wrapper hero-header-wraper pl-0 pr-0'
     >
       <div className='row m-0 header pl-0 pr-0 justify-content-center justify-content-lg-start'>
-        <section className='blog ml-md-5 col-lg-7 col-11'>
+        <section className='blog ml-md-5 col-lg-6 col-11'>
           <div className='info'>
             <small>Last post:</small>
             <h1 className='_title'>{ghostPost.title}</h1>

@@ -3,6 +3,8 @@ import { graphql, Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Image from 'gatsby-image';
 
+import SEO from '../components/seo';
+
 import Layout from '../components/layout';
 
 export const Query = graphql`
@@ -19,6 +21,9 @@ export const Query = graphql`
         childImageSharp {
           fluid(maxWidth: 2500) {
             ...GatsbyImageSharpFluid_withWebp
+          }
+          ogImage: fluid(webpQuality: 10, maxWidth: 1200) {
+            src
           }
         }
       }
@@ -57,6 +62,11 @@ export default function CategoriesTemplate({
 }) {
   return (
     <Layout>
+      <SEO
+        title={tag.name}
+        description={tag.description}
+        ogImage={tag.localFeatureImage.childImageSharp.ogImage.src}
+      />
       <main className='category-page'>
         <BackgroundImage
           className='headerr'

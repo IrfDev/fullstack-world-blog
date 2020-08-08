@@ -7,7 +7,7 @@ const Header = ({ siteTitle, menuStatus, toggleMenu }) => (
     style={{
       position: 'absolute',
       zIndex: 100,
-      minWidth: '100vw',
+      minWidth: '98vw',
     }}
     className='row p-4 m-0 header-layout justify-content-between'
   >
@@ -22,8 +22,8 @@ const Header = ({ siteTitle, menuStatus, toggleMenu }) => (
         <img src='/fullstack-logo.png' alt='logo' className='_logo img-fluid' />
       </Link>
     </div>
-    <div onClick={toggleMenu} className='icon mr-lg-3'>
-      <i class='fas fa-bars'></i>
+    <div role='navigation' className='icon mr-lg-3' tabIndex={-42}>
+      <i onClick={toggleMenu} class='fas fa-bars' />
     </div>
   </header>
 );

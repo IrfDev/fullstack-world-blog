@@ -22,6 +22,9 @@ export const Query = graphql`
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
+          ogImage: fluid(webpQuality: 10, maxWidth: 1200) {
+            src
+          }
         }
       }
       primary_author {
@@ -89,7 +92,12 @@ export default function PostTemplates({ data }) {
 
   return (
     <Layout>
-      <SEO title={post.title} description={post.excerpt} />
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        ogImage={post.localFeatureImage.childImageSharp.ogImage.src}
+        ogType={'article'}
+      />
       <main className='post-page'>
         <BackgroundImage
           className='header'
@@ -111,7 +119,7 @@ export default function PostTemplates({ data }) {
         </BackgroundImage>
 
         <div className='row justify-content-center  m-0'>
-          <div className='col-10 col-lg-7'>
+          <div className='col-10 col-lg-7 mt-5'>
             <article className='post-content'>
               {renderAst(post.childHtmlRehype.htmlAst)}
             </article>
