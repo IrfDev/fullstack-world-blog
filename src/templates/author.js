@@ -34,7 +34,7 @@ export const Query = graphql`
 export default function AuthorTemplate({ data: { ghostAuthor: author } }) {
   return (
     <Layout>
-      <SEO title={`Author ${author.name}`} description={author.bio} />
+      <SEO title={`Author: ${author.name}`} description={author.bio} />
       <main className='container-fluid author-page'>
         <BackgroundImage
           tag='div'
@@ -53,7 +53,7 @@ export default function AuthorTemplate({ data: { ghostAuthor: author } }) {
                 alt={author.name}
               />
             </div>
-            <div className='justify-content-center d-flex social align-self-center'>
+            <div className='justify-content-center mt-4 d-flex social align-self-center'>
               <a href={author.twitter}>
                 <i class='fab fa-github'></i>
               </a>

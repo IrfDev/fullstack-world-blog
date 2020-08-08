@@ -29,7 +29,7 @@ export default function AsideBar({ toggleMenu }) {
         </div>
         <ul>
           {edges.map(({ node: tag }) => (
-            <li>
+            <li key={tag.slug}>
               <Link className='_item' to={`/categories/${tag.slug}`}>
                 {tag.name}
               </Link>

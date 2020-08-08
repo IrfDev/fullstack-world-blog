@@ -22,7 +22,7 @@ export default function HeroHeader() {
           }
           localFeatureImage {
             childImageSharp {
-              fluid(maxWidth: 2500) {
+              fluid(maxWidth: 2000) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

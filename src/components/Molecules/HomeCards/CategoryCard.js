@@ -14,7 +14,7 @@ export default function HomeCategoryCard({ tag }) {
       case 'marketing':
         return <i className={`fas fa-bullhorn _item ${categorySlug}`}></i>;
 
-      case 'server':
+      case 'ops':
         return <i className={`fas fa-cloud _item ${categorySlug}`}></i>;
 
       default:

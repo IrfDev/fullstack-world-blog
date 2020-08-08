@@ -23,7 +23,7 @@ const Header = ({ siteTitle, menuStatus, toggleMenu }) => (
       </Link>
     </div>
     <div role='navigation' className='icon mr-lg-3' tabIndex={-42}>
-      <i onClick={toggleMenu} class='fas fa-bars' />
+      <i onClick={toggleMenu} className='fas fa-bars' />
     </div>
   </header>
 );

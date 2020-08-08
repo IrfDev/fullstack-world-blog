@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: 'FullstackWorld',
+        bucketName: 'full-stack.world',
       },
     },
     {
