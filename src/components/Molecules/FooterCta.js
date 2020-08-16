@@ -6,7 +6,7 @@ export default function FooterCta() {
       <form action='submit'>
         <h6>Get the new technology for later and read it at any time</h6>
         <input type='text' placeholder='email' />
-        <button>Enviar</button>
+        <button>Send</button>
       </form>
     </div>
   );

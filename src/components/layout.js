@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Global, css } from '@emotion/core';
 import { Helmet } from 'react-helmet';
 
@@ -58,10 +58,27 @@ const Layout = ({ children }) => {
 
           <main>{children}</main>
           <AsideBar toggleMenu={toggleMenu} />
-          <footer>
-            © {new Date().getFullYear()}, Built by
-            {` `}
-            <a href='https://github.com/IrfDev'>IrfDev</a>
+          <footer className='main-footer d-flex align-items-center justify-content-between'>
+            <div className='main'>
+              © {new Date().getFullYear()}, Built by
+              {` `}
+              <a href='https://github.com/IrfDev'>IrfDev</a>
+            </div>
+            <div className='logo'>
+              <Link
+                to='/'
+                style={{
+                  color: `white`,
+                  textDecoration: `none`,
+                }}
+              >
+                <img
+                  src='/fullstack-logo.png'
+                  alt='logo fullstack'
+                  className='_logo img-fluid'
+                />
+              </Link>
+            </div>
           </footer>
         </div>
       </div>

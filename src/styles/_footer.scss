@@ -4,6 +4,14 @@
   margin-top: 3em;
   min-height: 60vh;
   background-color: $alpha-color-300;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.63) 0%,
+      rgba(74, 32, 255, 0.49) 100%
+    ),
+    url('/images/bg-cta.png');
+  border-radius: 7px;
+  background-position: center;
   display: flex;
   align-items: center;
   form {

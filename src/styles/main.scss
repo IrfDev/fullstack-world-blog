@@ -7,3 +7,17 @@
 @import 'author';
 @import 'layout';
 @import 'fonts';
+
+.main-footer {
+  background-color: $alpha-color;
+  color: white;
+  margin-top: 3em;
+  padding: 1em;
+  a {
+    font-weight: 900;
+    color: white;
+  }
+  .logo {
+    flex-basis: 4%;
+  }
+}
