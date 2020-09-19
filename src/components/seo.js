@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 // Every View needs to have these arguments, for SEO and Social Media. If not have this tags, it'll be taken from gatsby.config
 
-function SEO({ description, lang, meta, title, ogImage, ogType }) {
+function SEO({ description, lang, meta, title, ogImage, ogType, ogUrl }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,6 +25,7 @@ function SEO({ description, lang, meta, title, ogImage, ogType }) {
   const metaDescription = description || site.siteMetadata.description;
   const srcogImage = ogImage || site.siteMetadata.ogImage;
   const srcogType = ogType || site.siteMetadata.ogType;
+  const srcOgUrl = ogUrl || 'https://full-stack.world';
 
   return (
     <Helmet
@@ -39,38 +40,52 @@ function SEO({ description, lang, meta, title, ogImage, ogType }) {
           content: metaDescription,
         },
         {
+          key: 'og:url',
+          property: 'og:url',
+          content: srcOgUrl,
+        },
+        {
+          key: 'og:title',
           property: `og:title`,
           content: title,
         },
         {
+          key: 'og:description',
           property: `og:description`,
           content: metaDescription,
         },
         {
+          key: 'og:type',
           property: `og:type`,
           content: srcogType,
         },
         {
+          key: 'twitter:card',
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
+          key: 'twitter:creator',
           name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
+          key: 'twitter:title',
           name: `twitter:title`,
           content: title,
         },
         {
+          key: 'twitter:description',
           name: `twitter:description`,
           content: metaDescription,
         },
         {
+          key: 'twitter:image',
           name: `twitter:image`,
           content: srcogImage,
         },
         {
+          key: 'og:image',
           name: `og:image`,
           content: srcogImage,
         },

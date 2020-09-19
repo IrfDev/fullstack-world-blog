@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Fullstack world`,
-    description: 'Blog for fullstack developers who loves developing',
+    description:
+      'Blog for fullstack developers who love keeping in touch with the recent technology and little hacks wich make the difference. Enter now and join the Fullstack world 👨🏻‍💻🌏',
     author: `@IrfDev`,
     ogImage: `/og-main.png`,
     ogType: 'website',
@@ -66,9 +67,9 @@ module.exports = {
       resolve: `gatsby-source-ghost`,
       options: {
         apiUrl: `https://ghost.full-stack.world`,
-        contentApiKey: `4208cd7bc4d3e0b01b8954a185`,
+        contentApiKey: `52cda954c3ae003cd5c16cac4d`,
         adminApiKey:
-          '5f09710e57f70f0dc37d3497:1aa36b3946c9a3d63444c0baf6a10537182f360e3b9faaa3a94e38914c7b8e13',
+          '5f4d760b6a080a848777c04b:bc2788b533ae8059ce7b041dfc804bc872aa4edc0de0cb2cdde1d4066c9ebd0a',
         version: `v3`,
       },
     },
