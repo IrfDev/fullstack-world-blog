@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/irfdev/full-stack/issues"
   },
-  "homepage": "https://github.com/irfdev/full-stack#readme"
+  "homepage": "https://github.com/irfdev/full-stack#readme",
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  }
 }
