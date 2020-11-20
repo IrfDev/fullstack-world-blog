@@ -1,0 +1,28 @@
+{
+  "name": "gatsby-theme-fullstack-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irfdev/full-stack.git"
+  },
+  "keywords": [
+    "gatsby",
+    "theme",
+    "gatsby",
+    "theme",
+    "ui",
+    "dev",
+    "developer"
+  ],
+  "author": "irfdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irfdev/full-stack/issues"
+  },
+  "homepage": "https://github.com/irfdev/full-stack#readme"
+}
