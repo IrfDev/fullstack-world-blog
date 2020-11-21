@@ -60,6 +60,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         tag: `${post.primary_tag.slug}`,
       },
     });
+    
+    actions.createPage({
+      path: `/categories/${post.primary_tag.slug}/amp/${post.slug}`,
+      component: require.resolve('./src/templates/post.amp.js'),
+      context: {
+        slug: `${post.slug}`,
+        tag: `${post.primary_tag.slug}`,
+      },
+    });
   });
 
   const resultAuthors = await graphql(`

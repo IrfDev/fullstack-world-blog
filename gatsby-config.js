@@ -14,6 +14,31 @@ module.exports = {
     `gatsby-theme-fullstack-dev`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-amp`,
+      options: {
+        analytics: {
+          type: 'gtag',
+          dataCredentials: 'include',
+          config: {
+            vars: {
+              gtag_id: 'G-8LXTRSX3W9',
+              config: {
+                'G-8LXTRSX3W9': {
+                  page_location: '{{pathname}}'
+                },
+              },
+            },
+          },
+        },
+        canonicalBaseUrl: 'https://full-stack.world/',
+        components: ['amp-form', 'amp-img','amp-social-share'],
+        excludedPaths: ['/404*', '/'],
+        pathIdentifier: '/amp/',
+        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+        useAmpClientIdApi: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sass',
     },
     {
