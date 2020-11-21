@@ -120,7 +120,7 @@ export default function PostTemplates({ data }) {
               width="60"
               height="44"
               data-param-text={post.title}
-              data-param-url={`/categories/${tag.slug}/${tag.name}`}
+              data-param-url={`https://full-stack.world/categories/${post.primary_tag.slug}/${post.slug}`}
               aria-label="Share on LinkedIn"
             />
           </header>

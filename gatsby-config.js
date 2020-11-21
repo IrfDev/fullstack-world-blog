@@ -92,10 +92,10 @@ module.exports = {
     {
       resolve: `gatsby-source-ghost`,
       options: {
-        apiUrl: `https://ghost.full-stack.world`,
-        contentApiKey: `52cda954c3ae003cd5c16cac4d`,
+        apiUrl: `https://full-stack-blog.herokuapp.com`,
+        contentApiKey: `d293babf4066d2011e7d1cd0ba`,
         adminApiKey:
-          '5f4d760b6a080a848777c04b:bc2788b533ae8059ce7b041dfc804bc872aa4edc0de0cb2cdde1d4066c9ebd0a',
+          '5fb8a25b04cc40001e5866b2:7e84d5b78442780f0ec8d514ef95e702f7541bfe9ecf269134401202c7ee509c',
         version: `v3`,
       },
     },
